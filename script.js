@@ -9,13 +9,14 @@ console.log("Stop! Who would cross the Bridge of Death. Must answer me these que
 
 rl.question("What is your name? ", (name) => {
   rl.question("What is your quest? ", (quest) => {
-    if (quest !== "To seek the Holy Grail") {
+    const questLower = quest.toLowerCase()
+    if (!questLower.includes("seek") || !questLower.includes("holy grail")) {
       console.log("Ahh-hh-hh......")
       rl.close()
       return
     }
     rl.question("What is your favorite color? ", (color) => {
-      if (color !== "blue") {
+      if (color.toLowerCase() !== "blue") {
         console.log("Ahh-hh-hh......")
         rl.close()
         return
